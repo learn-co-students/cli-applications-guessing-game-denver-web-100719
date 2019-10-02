@@ -3,15 +3,14 @@ def user_prompt
 end
 
 def run_guessing_game
-  user_prompt
-  input =  gets.chomp
+  #user_prompt
+  input =  gets.strip
   number =  rand(6) + 1
-  number.to_s
-    if input == number
-      print "You guessed the correct number!"
-    elsif input == "exit" 
-      print "Goodbye!"
+    if input == "exit"
+      puts "Goodbye!"
+    elsif number.to_i == input.to_i 
+      puts "You guessed the correct number!"
     else
-      print "Sorry! The computer guessed #{number}"
+      puts "Sorry! The computer guessed #{number}."
   end
 end
